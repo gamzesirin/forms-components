@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kayıt Ol - Yolculuğunuz Başlasın</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				darkMode: 'class'
+			}
+		</script>
+	</head>
+	<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+		<!-- Dark Mode Toggle -->
+		<button
+			id="theme-toggle"
+			class="fixed top-6 right-6 z-50 p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 shadow-md"
+		>
+			<svg id="sun-icon" class="w-5 h-5 text-orange-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+				<path
+					fill-rule="evenodd"
+					d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+					clip-rule="evenodd"
+				></path>
+			</svg>
+			<svg id="moon-icon" class="w-5 h-5 text-gray-700 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+				<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+			</svg>
+		</button>
+
+		<div class="min-h-screen flex">
+			<!-- Sol Panel - Form -->
+			<div class="w-full lg:w-1/2 flex items-center justify-center p-8 lg:p-16">
+				<div class="w-full max-w-lg">
+					<!-- Header -->
+					<div class="mb-12">
+						<div class="flex items-center mb-6">
+							<div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center mr-3">
+								<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+									></path>
+								</svg>
+							</div>
+							<h1 class="text-2xl font-bold text-gray-900 dark:text-white">Platforma Katılın</h1>
+						</div>
+						<h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
+							Yeni Hesap<br />
+							<span class="text-emerald-500">Oluşturun</span>
+						</h2>
+						<p class="text-gray-600 dark:text-gray-400 text-lg">
+							Birkaç dakika içinde ücretsiz hesabınızı oluşturun ve tüm özelliklerden faydalanmaya başlayın.
+						</p>
+					</div>
+
+					<!-- Progress Steps -->
+					<div id="progress-bar" class="flex items-center mb-8">
+						<div class="flex items-center">
+							<div
+								id="step1-circle"
+								class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-semibold"
+							>
+								1
+							</div>
+							<span id="step1-text" class="ml-2 text-sm font-medium text-emerald-600 dark:text-emerald-400"
+								>Bilgileriniz</span
+							>
+						</div>
+						<div id="progress-line" class="w-16 h-0.5 bg-gray-200 dark:bg-gray-700 mx-4"></div>
+						<div class="flex items-center">
+							<div
+								id="step2-circle"
+								class="w-8 h-8 bg-gray-200 dark:bg-gray-700 text-gray-500 rounded-full flex items-center justify-center text-sm font-semibold"
+							>
+								2
+							</div>
+							<span id="step2-text" class="ml-2 text-sm text-gray-500">Doğrulama</span>
+						</div>
+					</div>
+
+					<!-- Form -->
+					<div id="step-1" class="block">
+						<form id="registration-form" class="space-y-6">
+							<div class="grid grid-cols-2 gap-4">
+								<div>
+									<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Ad</label>
+									<input
+										type="text"
+										id="firstName"
+										required
+										class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-200 dark:border-gray-700 focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none transition-colors text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+										placeholder="Adınız"
+									/>
+								</div>
+								<div>
+									<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Soyad</label>
+									<input
+										type="text"
+										id="lastName"
+										required
+										class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-200 dark:border-gray-700 focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none transition-colors text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+										placeholder="Soyadınız"
+									/>
+								</div>
+							</div>
+
+							<div>
+								<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">E-posta Adresi</label>
+								<input
+									type="email"
+									id="email"
+									required
+									class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-200 dark:border-gray-700 focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none transition-colors text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+									placeholder="ornek@email.com"
+								/>
+							</div>
+
+							<div class="relative">
+								<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Şifre</label>
+								<input
+									type="password"
+									required
+									id="password"
+									class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-200 dark:border-gray-700 focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none transition-colors text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+									placeholder="En az 8 karakter"
+								/>
+
+								<!-- Password Strength Indicator -->
+								<div class="mt-2">
+									<div class="flex space-x-1">
+										<div class="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full">
+											<div id="strength-bar" class="h-1 bg-red-400 rounded-full transition-all duration-300 w-0"></div>
+										</div>
+									</div>
+									<p id="strength-text" class="text-xs text-gray-500 dark:text-gray-400 mt-1">Şifre gücü: Zayıf</p>
+								</div>
+							</div>
+
+							<div class="space-y-4">
+								<label class="flex items-start">
+									<input
+										type="checkbox"
+										id="terms"
+										required
+										class="w-5 h-5 text-emerald-600 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-emerald-500 dark:focus:ring-emerald-400 mt-0.5"
+									/>
+									<span class="ml-3 text-sm text-gray-600 dark:text-gray-400">
+										<a href="#" class="text-emerald-600 dark:text-emerald-400 hover:underline">Kullanım Şartları</a> ve
+										<a href="#" class="text-emerald-600 dark:text-emerald-400 hover:underline">Gizlilik Politikası</a
+										>'nı okudum ve kabul ediyorum.
+									</span>
+								</label>
+
+								<label class="flex items-center">
+									<input
+										type="checkbox"
+										id="newsletter"
+										class="w-5 h-5 text-emerald-600 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-emerald-500 dark:focus:ring-emerald-400"
+									/>
+									<span class="ml-3 text-sm text-gray-600 dark:text-gray-400">
+										E-posta ile güncellemeler almak istiyorum.
+									</span>
+								</label>
+							</div>
+
+							<button
+								type="submit"
+								class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-emerald-500/50 shadow-lg hover:shadow-xl"
+							>
+								Hesabımı Oluştur
+							</button>
+
+							<div class="text-center">
+								<span class="text-gray-600 dark:text-gray-400">Zaten hesabınız var mı? </span>
+								<a
+									href="#"
+									class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 dark:hover:text-emerald-300 font-semibold"
+								>
+									Giriş yapın
+								</a>
+							</div>
+						</form>
+					</div>
+
+					<!-- Step 2 - Verification -->
+					<div id="step-2" class="hidden">
+						<div class="text-center mb-8">
+							<div
+								class="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+							>
+								<svg
+									class="w-8 h-8 text-emerald-600 dark:text-emerald-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+									></path>
+								</svg>
+							</div>
+							<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">E-posta Doğrulaması</h3>
+							<p class="text-gray-600 dark:text-gray-400">
+								<span id="verification-email"></span> adresine 6 haneli doğrulama kodu gönderdik.
+							</p>
+						</div>
+
+						<form id="verification-form" class="space-y-6">
+							<div>
+								<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4 text-center">
+									Doğrulama Kodunu Girin
+								</label>
+								<div class="flex justify-center space-x-3">
+									<input
+										type="text"
+										maxlength="1"
+										class="verification-input w-12 h-12 text-center text-xl font-bold border-2 border-gray-200 dark:border-gray-700 rounded-lg focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+									/>
+									<input
+										type="text"
+										maxlength="1"
+										class="verification-input w-12 h-12 text-center text-xl font-bold border-2 border-gray-200 dark:border-gray-700 rounded-lg focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+									/>
+									<input
+										type="text"
+										maxlength="1"
+										class="verification-input w-12 h-12 text-center text-xl font-bold border-2 border-gray-200 dark:border-gray-700 rounded-lg focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+									/>
+									<input
+										type="text"
+										maxlength="1"
+										class="verification-input w-12 h-12 text-center text-xl font-bold border-2 border-gray-200 dark:border-gray-700 rounded-lg focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+									/>
+									<input
+										type="text"
+										maxlength="1"
+										class="verification-input w-12 h-12 text-center text-xl font-bold border-2 border-gray-200 dark:border-gray-700 rounded-lg focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+									/>
+									<input
+										type="text"
+										maxlength="1"
+										class="verification-input w-12 h-12 text-center text-xl font-bold border-2 border-gray-200 dark:border-gray-700 rounded-lg focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+									/>
+								</div>
+							</div>
+
+							<div class="text-center">
+								<p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+									Kod
+									<span id="countdown" class="font-semibold text-emerald-600 dark:text-emerald-400">02:00</span> içinde
+									gelecek.
+								</p>
+								<button
+									type="button"
+									id="resend-code"
+									class="text-sm text-emerald-600 dark:text-emerald-400 hover:underline font-semibold disabled:text-gray-400 disabled:no-underline"
+									disabled
+								>
+									Kodu tekrar gönder
+								</button>
+							</div>
+
+							<button
+								type="submit"
+								class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-emerald-500/50 shadow-lg hover:shadow-xl"
+							>
+								Hesabımı Doğrula
+							</button>
+
+							<div class="text-center">
+								<button
+									type="button"
+									id="back-to-step1"
+									class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+								>
+									← Geri dön
+								</button>
+							</div>
+						</form>
+					</div>
+
+					<!-- Success Message -->
+					<div id="success-message" class="hidden text-center">
+						<div
+							class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+						>
+							<svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+								<path
+									fill-rule="evenodd"
+									d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+									clip-rule="evenodd"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Hesabınız Oluşturuldu!</h3>
+						<p class="text-gray-600 dark:text-gray-400 mb-6">
+							Tebrikler! Hesabınız başarıyla oluşturuldu ve doğrulandı. Artık platformumuzun tüm özelliklerini
+							kullanabilirsiniz.
+						</p>
+						<button
+							class="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300"
+						>
+							Başlayalım
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sağ Panel - İllüstrasyon -->
+			<div
+				class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-gray-800 dark:to-gray-900 items-center justify-center p-16 relative overflow-hidden"
+			>
+				<!-- Background Pattern -->
+				<div class="absolute inset-0 opacity-10">
+					<div class="absolute top-20 left-20 w-40 h-40 bg-emerald-300 rounded-full"></div>
+					<div class="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full"></div>
+					<div class="absolute top-1/2 left-1/3 w-32 h-32 bg-green-300 rounded-full"></div>
+				</div>
+
+				<div class="relative z-10 text-center">
+					<!-- Large Icon -->
+					<div
+						class="w-48 h-48 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-3xl mx-auto mb-8 flex items-center justify-center shadow-2xl"
+					>
+						<svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+							></path>
+						</svg>
+					</div>
+
+					<h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Topluluğa katılın</h3>
+					<p class="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-md">
+						50.000+ kullanıcının tercih ettiği platformda siz de yerinizi alın. İş süreçlerinizi kolaylaştırın ve
+						verimliliğinizi artırın.
+					</p>
+
+					<!-- Stats -->
+					<div class="grid grid-cols-3 gap-8 max-w-md mx-auto">
+						<div class="text-center">
+							<div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">50K+</div>
+							<div class="text-sm text-gray-600 dark:text-gray-400">Kullanıcı</div>
+						</div>
+						<div class="text-center">
+							<div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">99.9%</div>
+							<div class="text-sm text-gray-600 dark:text-gray-400">Uptime</div>
+						</div>
+						<div class="text-center">
+							<div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">24/7</div>
+							<div class="text-sm text-gray-600 dark:text-gray-400">Destek</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Dark mode toggle
+			const themeToggle = document.getElementById('theme-toggle')
+			const currentTheme = localStorage.getItem('theme') || 'light'
+
+			if (currentTheme === 'dark') {
+				document.documentElement.classList.add('dark')
+			}
+
+			themeToggle.addEventListener('click', function () {
+				document.documentElement.classList.toggle('dark')
+				localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light')
+			})
+
+			// Password strength indicator
+			const passwordInput = document.getElementById('password')
+			const strengthBar = document.getElementById('strength-bar')
+			const strengthText = document.getElementById('strength-text')
+
+			if (passwordInput) {
+				passwordInput.addEventListener('input', function () {
+					const password = passwordInput.value
+					let strength = 0
+
+					if (password.length >= 8) strength++
+					if (/[A-Z]/.test(password)) strength++
+					if (/[a-z]/.test(password)) strength++
+					if (/\d/.test(password)) strength++
+					if (/[\W_]/.test(password)) strength++
+
+					switch (strength) {
+						case 0:
+						case 1:
+							strengthBar.style.width = '20%'
+							strengthBar.className = 'h-1 bg-red-400 rounded-full transition-all duration-300'
+							strengthText.textContent = 'Şifre gücü: Çok zayıf'
+							break
+						case 2:
+							strengthBar.style.width = '40%'
+							strengthBar.className = 'h-1 bg-yellow-400 rounded-full transition-all duration-300'
+							strengthText.textContent = 'Şifre gücü: Zayıf'
+							break
+						case 3:
+							strengthBar.style.width = '60%'
+							strengthBar.className = 'h-1 bg-orange-400 rounded-full transition-all duration-300'
+							strengthText.textContent = 'Şifre gücü: Orta'
+							break
+						case 4:
+							strengthBar.style.width = '80%'
+							strengthBar.className = 'h-1 bg-green-400 rounded-full transition-all duration-300'
+							strengthText.textContent = 'Şifre gücü: Güçlü'
+							break
+						case 5:
+							strengthBar.style.width = '100%'
+							strengthBar.className = 'h-1 bg-blue-400 rounded-full transition-all duration-300'
+							strengthText.textContent = 'Şifre gücü: Çok güçlü'
+							break
+					}
+				})
+			}
+
+			// Multi-step form functionality
+			const step1 = document.getElementById('step-1')
+			const step2 = document.getElementById('step-2')
+			const successMessage = document.getElementById('success-message')
+			const registrationForm = document.getElementById('registration-form')
+			const verificationForm = document.getElementById('verification-form')
+			const backToStep1Btn = document.getElementById('back-to-step1')
+			const resendCodeBtn = document.getElementById('resend-code')
+
+			// Progress bar elements
+			const step1Circle = document.getElementById('step1-circle')
+			const step1Text = document.getElementById('step1-text')
+			const step2Circle = document.getElementById('step2-circle')
+			const step2Text = document.getElementById('step2-text')
+			const progressLine = document.getElementById('progress-line')
+
+			// Step 1 form submission
+			registrationForm.addEventListener('submit', function (e) {
+				e.preventDefault()
+
+				// Get email for verification step
+				const email = document.getElementById('email').value
+				document.getElementById('verification-email').textContent = email
+
+				// Hide step 1, show step 2
+				step1.classList.add('hidden')
+				step2.classList.remove('hidden')
+
+				// Update progress bar
+				step1Circle.className =
+					'w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold'
+				step1Circle.innerHTML =
+					'<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>'
+				step1Text.className = 'ml-2 text-sm font-medium text-green-600 dark:text-green-400'
+
+				progressLine.className = 'w-16 h-0.5 bg-emerald-500 mx-4'
+
+				step2Circle.className =
+					'w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-semibold'
+				step2Text.className = 'ml-2 text-sm font-medium text-emerald-600 dark:text-emerald-400'
+
+				// Start countdown
+				startCountdown()
+			})
+
+			// Verification form submission
+			verificationForm.addEventListener('submit', function (e) {
+				e.preventDefault()
+
+				// Check if all verification inputs are filled
+				const verificationInputs = document.querySelectorAll('.verification-input')
+				let code = ''
+				verificationInputs.forEach((input) => {
+					code += input.value
+				})
+
+				if (code.length === 6) {
+					// Hide step 2, show success message
+					step2.classList.add('hidden')
+					successMessage.classList.remove('hidden')
+
+					// Update progress bar - mark step 2 as complete
+					step2Circle.className =
+						'w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold'
+					step2Circle.innerHTML =
+						'<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>'
+					step2Text.className = 'ml-2 text-sm font-medium text-green-600 dark:text-green-400'
+				} else {
+					alert('Lütfen 6 haneli doğrulama kodunu tam olarak girin.')
+				}
+			})
+
+			// Back to step 1
+			backToStep1Btn.addEventListener('click', function () {
+				step2.classList.add('hidden')
+				step1.classList.remove('hidden')
+
+				// Reset progress bar to step 1
+				step1Circle.className =
+					'w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-semibold'
+				step1Circle.innerHTML = '1'
+				step1Text.className = 'ml-2 text-sm font-medium text-emerald-600 dark:text-emerald-400'
+
+				progressLine.className = 'w-16 h-0.5 bg-gray-200 dark:bg-gray-700 mx-4'
+
+				step2Circle.className =
+					'w-8 h-8 bg-gray-200 dark:bg-gray-700 text-gray-500 rounded-full flex items-center justify-center text-sm font-semibold'
+				step2Circle.innerHTML = '2'
+				step2Text.className = 'ml-2 text-sm text-gray-500'
+			})
+
+			// Verification code inputs - auto focus next input
+			const verificationInputs = document.querySelectorAll('.verification-input')
+			verificationInputs.forEach((input, index) => {
+				input.addEventListener('input', function () {
+					if (this.value.length === 1 && index < verificationInputs.length - 1) {
+						verificationInputs[index + 1].focus()
+					}
+				})
+
+				input.addEventListener('keydown', function (e) {
+					if (e.key === 'Backspace' && this.value === '' && index > 0) {
+						verificationInputs[index - 1].focus()
+					}
+				})
+			})
+
+			// Countdown timer for resend code
+			let countdownInterval
+			function startCountdown() {
+				let timeLeft = 120 // 2 minutes
+				const countdownElement = document.getElementById('countdown')
+
+				resendCodeBtn.disabled = true
+
+				countdownInterval = setInterval(() => {
+					const minutes = Math.floor(timeLeft / 60)
+					const seconds = timeLeft % 60
+					countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+
+					if (timeLeft <= 0) {
+						clearInterval(countdownInterval)
+						resendCodeBtn.disabled = false
+						countdownElement.textContent = '00:00'
+					}
+
+					timeLeft--
+				}, 1000)
+			}
+
+			// Resend code functionality
+			resendCodeBtn.addEventListener('click', function () {
+				// Clear verification inputs
+				verificationInputs.forEach((input) => (input.value = ''))
+				verificationInputs[0].focus()
+
+				// Restart countdown
+				startCountdown()
+
+				// You would typically make an API call here to resend the code
+				console.log('Verification code resent')
+			})
+		</script>
+	</body>
+</html>

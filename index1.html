@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Giriş Yap | Modern Template</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				darkMode: 'class'
+			}
+		</script>
+	</head>
+	<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+		<!-- Dark Mode Toggle -->
+		<button
+			id="theme-toggle"
+			class="fixed top-6 right-6 z-50 p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 shadow-md"
+		>
+			<svg id="sun-icon" class="w-5 h-5 text-purple-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+				<path
+					fill-rule="evenodd"
+					d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+					clip-rule="evenodd"
+				></path>
+			</svg>
+			<svg id="moon-icon" class="w-5 h-5 text-gray-700 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+				<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+			</svg>
+		</button>
+
+		<div class="min-h-screen flex">
+			<!-- Sol Panel - Form -->
+			<div class="w-full lg:w-1/2 flex items-center justify-center p-8 lg:p-16">
+				<div class="w-full max-w-lg">
+					<!-- Header -->
+					<div class="mb-12">
+						<div class="flex items-center mb-6">
+							<div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+								<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+									></path>
+								</svg>
+							</div>
+							<h1 class="text-2xl font-bold text-gray-900 dark:text-white">LoginForm</h1>
+						</div>
+						<h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
+							<span class="text-purple-500">Giriş</span><br />
+							Yapın
+						</h2>
+						<p class="text-gray-600 dark:text-gray-400 text-lg">
+							Hesabınıza güvenle giriş yapın ve platformumuzdaki tüm özelliklere erişim sağlayın.
+						</p>
+					</div>
+
+					<!-- Security Info -->
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+						<div class="flex items-center p-3 bg-purple-50 dark:bg-gray-800 rounded-lg">
+							<div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+								<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+									<path
+										fill-rule="evenodd"
+										d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+										clip-rule="evenodd"
+									></path>
+								</svg>
+							</div>
+							<div>
+								<p class="text-sm font-medium text-gray-900 dark:text-white">Güvenli Giriş</p>
+								<p class="text-xs text-gray-500 dark:text-gray-400">SSL şifreleme</p>
+							</div>
+						</div>
+						<div class="flex items-center p-3 bg-purple-50 dark:bg-gray-800 rounded-lg">
+							<div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+								<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+									<path
+										fill-rule="evenodd"
+										d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z"
+										clip-rule="evenodd"
+									></path>
+								</svg>
+							</div>
+							<div>
+								<p class="text-sm font-medium text-gray-900 dark:text-white">İki Faktörlü</p>
+								<p class="text-xs text-gray-500 dark:text-gray-400">Ekstra güvenlik</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Form -->
+					<form id="login-form" class="space-y-6">
+						<!-- E-posta -->
+						<div>
+							<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">E-posta *</label>
+							<input
+								type="email"
+								required
+								class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-200 dark:border-gray-700 focus:border-purple-500 dark:focus:border-purple-400 focus:outline-none transition-colors text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+								placeholder="ornek@email.com"
+							/>
+						</div>
+
+						<!-- Şifre -->
+						<div>
+							<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Şifre *</label>
+							<div class="relative">
+								<input
+									type="password"
+									id="password"
+									required
+									class="w-full px-0 py-3 pr-8 bg-transparent border-0 border-b-2 border-gray-200 dark:border-gray-700 focus:border-purple-500 dark:focus:border-purple-400 focus:outline-none transition-colors text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+									placeholder="••••••••"
+								/>
+								<button
+									type="button"
+									id="toggle-password"
+									class="absolute right-0 top-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+								>
+									<svg id="eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+										></path>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+										></path>
+									</svg>
+									<svg id="eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"
+										></path>
+									</svg>
+								</button>
+							</div>
+						</div>
+
+						<div class="flex items-center justify-between">
+							<label class="flex items-center">
+								<input
+									type="checkbox"
+									class="w-5 h-5 text-purple-600 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-purple-500 dark:focus:ring-purple-400"
+								/>
+								<span class="ml-3 text-sm text-gray-600 dark:text-gray-400">Beni hatırla</span>
+							</label>
+							<a href="#" class="text-sm text-purple-600 dark:text-purple-400 hover:underline"> Şifremi unuttum? </a>
+						</div>
+
+						<button
+							type="submit"
+							class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-purple-500/50 shadow-lg hover:shadow-xl"
+						>
+							Giriş Yap
+						</button>
+
+						<!-- Success Message -->
+						<div
+							id="success-message"
+							class="hidden p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg"
+						>
+							<div class="flex items-center">
+								<svg class="w-5 h-5 text-green-600 dark:text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+									<path
+										fill-rule="evenodd"
+										d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+										clip-rule="evenodd"
+									></path>
+								</svg>
+								<span class="text-green-800 dark:text-green-200 font-medium"
+									>Giriş başarılı! Yönlendiriliyorsunuz...</span
+								>
+							</div>
+						</div>
+
+						<!-- Social Login -->
+						<div class="mt-8">
+							<div class="relative">
+								<div class="absolute inset-0 flex items-center">
+									<div class="w-full border-t border-gray-300 dark:border-gray-600"></div>
+								</div>
+								<div class="relative flex justify-center text-sm">
+									<span class="px-2 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400">veya</span>
+								</div>
+							</div>
+
+							<div class="mt-6 grid grid-cols-2 gap-3">
+								<button
+									type="button"
+									class="w-full inline-flex justify-center py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-xl shadow-sm bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+								>
+									<svg class="w-5 h-5" viewBox="0 0 24 24">
+										<path
+											fill="currentColor"
+											d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+										/>
+										<path
+											fill="currentColor"
+											d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+										/>
+										<path
+											fill="currentColor"
+											d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+										/>
+										<path
+											fill="currentColor"
+											d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+										/>
+									</svg>
+									<span class="ml-2">Google</span>
+								</button>
+
+								<button
+									type="button"
+									class="w-full inline-flex justify-center py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-xl shadow-sm bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+								>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+										/>
+									</svg>
+									<span class="ml-2">Twitter</span>
+								</button>
+							</div>
+						</div>
+
+						<div class="text-center text-sm text-gray-500 dark:text-gray-400">
+							Hesabınız yok mu?
+							<a href="#" class="text-purple-600 dark:text-purple-400 hover:underline font-semibold">Kayıt olun</a>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Sağ Panel - İllüstrasyon -->
+			<div
+				class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 items-center justify-center p-16 relative overflow-hidden"
+			>
+				<!-- Background Pattern -->
+				<div class="absolute inset-0 opacity-10">
+					<div class="absolute top-20 left-20 w-40 h-40 bg-purple-300 rounded-full"></div>
+					<div class="absolute bottom-20 right-20 w-60 h-60 bg-indigo-300 rounded-full"></div>
+					<div class="absolute top-1/2 left-1/3 w-32 h-32 bg-pink-300 rounded-full"></div>
+				</div>
+
+				<div class="relative z-10 text-center">
+					<!-- Large Icon -->
+					<div
+						class="w-48 h-48 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-3xl mx-auto mb-8 flex items-center justify-center shadow-2xl"
+					>
+						<svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+							></path>
+						</svg>
+					</div>
+
+					<h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Tekrar Hoş Geldiniz!</h3>
+					<p class="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-md">
+						Binlerce kullanıcının güvendiği platformumuzda işlerinizi kolaylaştırın. Modern ve güvenli arayüzümüzle her
+						an erişim sağlayın.
+					</p>
+
+					<!-- Stats -->
+					<div class="grid grid-cols-3 gap-8 max-w-md mx-auto">
+						<div class="text-center">
+							<div class="text-2xl font-bold text-purple-600 dark:text-purple-400">99.9%</div>
+							<div class="text-sm text-gray-600 dark:text-gray-400">Uptime</div>
+						</div>
+						<div class="text-center">
+							<div class="text-2xl font-bold text-purple-600 dark:text-purple-400">10K+</div>
+							<div class="text-sm text-gray-600 dark:text-gray-400">Kullanıcı</div>
+						</div>
+						<div class="text-center">
+							<div class="text-2xl font-bold text-purple-600 dark:text-purple-400">7/24</div>
+							<div class="text-sm text-gray-600 dark:text-gray-400">Destek</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Dark mode toggle
+			const themeToggle = document.getElementById('theme-toggle')
+			const currentTheme = localStorage.getItem('theme') || 'light'
+
+			if (currentTheme === 'dark') {
+				document.documentElement.classList.add('dark')
+			}
+
+			themeToggle.addEventListener('click', function () {
+				document.documentElement.classList.toggle('dark')
+				localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light')
+			})
+
+			// Password toggle
+			const togglePassword = document.getElementById('toggle-password')
+			const password = document.getElementById('password')
+			const eyeOpen = document.getElementById('eye-open')
+			const eyeClosed = document.getElementById('eye-closed')
+
+			togglePassword.addEventListener('click', function () {
+				const type = password.getAttribute('type') === 'password' ? 'text' : 'password'
+				password.setAttribute('type', type)
+
+				eyeOpen.classList.toggle('hidden')
+				eyeClosed.classList.toggle('hidden')
+			})
+
+			// Form submission
+			const loginForm = document.getElementById('login-form')
+			const successMessage = document.getElementById('success-message')
+
+			loginForm.addEventListener('submit', function (e) {
+				e.preventDefault()
+
+				// Show success message
+				successMessage.classList.remove('hidden')
+
+				// Simulate login process
+				setTimeout(() => {
+					successMessage.classList.add('hidden')
+					// Here you would normally redirect to dashboard
+					// window.location.href = '/dashboard';
+				}, 2000)
+			})
+		</script>
+	</body>
+</html>
