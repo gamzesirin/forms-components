@@ -58,8 +58,7 @@ Bu repository, modern ve responsive HTML form template'lerini içerir. Tüm temp
 1. **Template'i indirin**:
 
    ```bash
-   git clone https://github.com/your-username/html-form-templates
-   cd html-form-templates
+   git clone https://github.com/gamzesirin/forms-components
    ```
 
 2. **Favori template'inizi seçin**:
@@ -120,31 +119,6 @@ Yeni form alanı eklemek için mevcut yapıyı takip edin:
 
 - **HTML5**: Semantic markup
 - **TailwindCSS**: Utility-first CSS framework
-- **Vanilla JavaScript**: Form validasyonu ve etkileşimler
-- **CSS3**: Custom animasyonlar ve geçişler
-
-### Tarayıcı Desteği
-
-- ✅ Chrome (son 3 versiyon)
-- ✅ Firefox (son 3 versiyon)
-- ✅ Safari (son 3 versiyon)
-- ✅ Edge (son 3 versiyon)
-
-### Form Validasyon Özellikleri
-
-- **Real-time validasyon**: Kullanıcı yazdıkça kontrol
-- **E-posta formatı**: RFC compliant regex
-- **Telefon formatlaması**: Otomatik formatting
-- **Tarih kontrolü**: Geçmiş tarih engelleme
-- **Required alan kontrolü**: Boş alan uyarıları
-
-## 📱 Responsive Breakpoint'ler
-
-Template'ler aşağıdaki breakpoint'leri kullanır:
-
-- **Mobile**: < 640px
-- **Tablet**: 640px - 1024px
-- **Desktop**: > 1024px
 
 ## 🌙 Dark Mode
 
@@ -160,16 +134,6 @@ localStorage.setItem('theme', 'light')
 document.documentElement.classList.remove('dark')
 ```
 
-## 🔒 Güvenlik
-
-Template'ler client-side validasyon içerir. **Üretim ortamında mutlaka server-side validasyon ekleyin**:
-
-- Input sanitization
-- SQL injection koruması
-- XSS koruması
-- CSRF token kontrolü
-- Rate limiting
-
 ## 🤝 Katkıda Bulunma
 
 1. Repository'yi fork edin
@@ -177,22 +141,6 @@ Template'ler client-side validasyon içerir. **Üretim ortamında mutlaka server
 3. Değişikliklerinizi commit edin (`git commit -m 'Add amazing feature'`)
 4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
 5. Pull Request açın
-
-## 📝 Lisans
-
-Bu proje **MIT License** altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
-
-## 🙏 Teşekkürler
-
-- [TailwindCSS](https://tailwindcss.com/) - Styling framework
-- [Heroicons](https://heroicons.com/) - Icon seti
-- Tüm katkıda bulunanlar
-
-## 📞 İletişim
-
-- **GitHub Issues**: Bug report ve feature request için
-- **Email**: your-email@example.com
-- **Twitter**: [@yourusername](https://twitter.com/yourusername)
 
 ---
 
