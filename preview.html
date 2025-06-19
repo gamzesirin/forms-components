@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Minimal Form Templates</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				darkMode: 'class'
+			}
+		</script>
+	</head>
+	<body class="bg-gray-50 dark:bg-gray-900">
+		<!-- Dark Mode Toggle -->
+		<button
+			id="theme-toggle"
+			class="fixed top-4 right-4 z-50 p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+		>
+			<svg id="sun-icon" class="w-4 h-4 text-yellow-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+				<path
+					fill-rule="evenodd"
+					d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+					clip-rule="evenodd"
+				></path>
+			</svg>
+			<svg id="moon-icon" class="w-4 h-4 text-gray-600 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+				<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+			</svg>
+		</button>
+
+		<!-- Hero Section -->
+		<header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+			<div class="container mx-auto px-4 py-16">
+				<div class="text-center max-w-3xl mx-auto">
+					<h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Form Templates</h1>
+					<p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+						Minimal, responsive ve kullanıma hazır form koleksiyonu
+					</p>
+					<div class="flex flex-wrap justify-center gap-3">
+						<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded">
+							Responsive
+						</span>
+						<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded">
+							Dark Mode
+						</span>
+						<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded">
+							TailwindCSS
+						</span>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Templates Grid -->
+		<main class="container mx-auto px-4 py-12">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Template Collection</h2>
+				<p class="text-gray-600 dark:text-gray-400">Her ihtiyaç için tasarlanmış form şablonları</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
+				<!-- Template 1: Online Sipariş Formu -->
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3">
+								<svg
+									class="w-5 h-5 text-blue-600 dark:text-blue-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+									></path>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Sipariş Formu</h3>
+						</div>
+						<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+							E-ticaret siteleri için sipariş formu. Adres bilgileri ve ödeme seçenekleri.
+						</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-xs rounded">
+								E-ticaret
+							</span>
+							<span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-xs rounded">
+								Sipariş
+							</span>
+						</div>
+						<a
+							href="index.html"
+							target="_blank"
+							class="block w-full text-center bg-blue-600 text-white py-2 px-4 rounded text-sm"
+						>
+							Önizleme
+						</a>
+					</div>
+				</div>
+
+				<!-- Template 2: Giriş Formu -->
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div
+								class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3"
+							>
+								<svg
+									class="w-5 h-5 text-purple-600 dark:text-purple-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+									></path>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Giriş Formu</h3>
+						</div>
+						<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+							Modern login sayfası tasarımı. Sosyal medya girişi ve şifre özellikleri.
+						</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span
+								class="px-2 py-1 bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 text-xs rounded"
+							>
+								Login
+							</span>
+							<span
+								class="px-2 py-1 bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 text-xs rounded"
+							>
+								Sosyal Medya
+							</span>
+						</div>
+						<a
+							href="index1.html"
+							target="_blank"
+							class="block w-full text-center bg-purple-600 text-white py-2 px-4 rounded text-sm"
+						>
+							Önizleme
+						</a>
+					</div>
+				</div>
+
+				<!-- Template 3: Kayıt Formu -->
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div
+								class="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center mr-3"
+							>
+								<svg
+									class="w-5 h-5 text-emerald-600 dark:text-emerald-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+									></path>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Kayıt Formu</h3>
+						</div>
+						<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+							Çok adımlı kayıt formu. Şifre gücü göstergesi ve e-posta doğrulama.
+						</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span
+								class="px-2 py-1 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 text-xs rounded"
+							>
+								Kayıt
+							</span>
+							<span
+								class="px-2 py-1 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 text-xs rounded"
+							>
+								Çok Adımlı
+							</span>
+						</div>
+						<a
+							href="index2.html"
+							target="_blank"
+							class="block w-full text-center bg-emerald-600 text-white py-2 px-4 rounded text-sm"
+						>
+							Önizleme
+						</a>
+					</div>
+				</div>
+
+				<!-- Template 4: İletişim Formu -->
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div
+								class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-3"
+							>
+								<svg
+									class="w-5 h-5 text-orange-600 dark:text-orange-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+									></path>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900 dark:text-white">İletişim Formu</h3>
+						</div>
+						<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+							Şirket web siteleri için iletişim formu. Konu seçimi ve dosya ekleme.
+						</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span
+								class="px-2 py-1 bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-xs rounded"
+							>
+								İletişim
+							</span>
+							<span
+								class="px-2 py-1 bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-xs rounded"
+							>
+								Dosya Upload
+							</span>
+						</div>
+						<a
+							href="index3.html"
+							target="_blank"
+							class="block w-full text-center bg-orange-600 text-white py-2 px-4 rounded text-sm"
+						>
+							Önizleme
+						</a>
+					</div>
+				</div>
+
+				<!-- Template 5: Newsletter Formu -->
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-pink-100 dark:bg-pink-900/30 rounded-lg flex items-center justify-center mr-3">
+								<svg
+									class="w-5 h-5 text-pink-600 dark:text-pink-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M15 17h5l-5 5-5-5h5v-5a7.5 7.5 0 00-15 0v5h5l-5 5-5-5h5v-5z"
+									></path>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Newsletter Formu</h3>
+						</div>
+						<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+							E-posta pazarlama için newsletter abonelik formu. GDPR uyumlu.
+						</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="px-2 py-1 bg-pink-50 dark:bg-pink-900/20 text-pink-700 dark:text-pink-300 text-xs rounded">
+								Newsletter
+							</span>
+							<span class="px-2 py-1 bg-pink-50 dark:bg-pink-900/20 text-pink-700 dark:text-pink-300 text-xs rounded">
+								GDPR
+							</span>
+						</div>
+						<a
+							href="index4.html"
+							target="_blank"
+							class="block w-full text-center bg-pink-600 text-white py-2 px-4 rounded text-sm"
+						>
+							Önizleme
+						</a>
+					</div>
+				</div>
+
+				<!-- Template 6: Rezervasyon Formu -->
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center mr-3">
+								<svg
+									class="w-5 h-5 text-cyan-600 dark:text-cyan-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 9l4-4 4 4m-8 0h8"
+									></path>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Rezervasyon Formu</h3>
+						</div>
+						<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+							Randevu ve rezervasyon sistemleri için tarih/saat seçimi olan form.
+						</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="px-2 py-1 bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300 text-xs rounded">
+								Rezervasyon
+							</span>
+							<span class="px-2 py-1 bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300 text-xs rounded">
+								Tarih/Saat
+							</span>
+						</div>
+						<a
+							href="index5.html"
+							target="_blank"
+							class="block w-full text-center bg-cyan-600 text-white py-2 px-4 rounded text-sm"
+						>
+							Önizleme
+						</a>
+					</div>
+				</div>
+
+				<!-- Template 7: Pazar Araştırması Formu -->
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center mr-3">
+								<svg
+									class="w-5 h-5 text-teal-600 dark:text-teal-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+									></path>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Pazar Araştırması</h3>
+						</div>
+						<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+							E-ticaret için çok adımlı pazar analizi formu. Detaylı bilgi toplama.
+						</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 text-xs rounded">
+								Pazar Analizi
+							</span>
+							<span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 text-xs rounded">
+								E-ticaret
+							</span>
+						</div>
+						<a
+							href="index6.html"
+							target="_blank"
+							class="block w-full text-center bg-teal-600 text-white py-2 px-4 rounded text-sm"
+						>
+							Önizleme
+						</a>
+					</div>
+				</div>
+
+				<!-- Template 8: Ödeme Formu -->
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div
+								class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-3"
+							>
+								<svg
+									class="w-5 h-5 text-indigo-600 dark:text-indigo-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+									></path>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Ödeme Formu</h3>
+						</div>
+						<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+							Güvenli kredi kartı ödeme formu. SSL şifreleme ve kart doğrulama.
+						</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span
+								class="px-2 py-1 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 text-xs rounded"
+							>
+								Ödeme
+							</span>
+							<span
+								class="px-2 py-1 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 text-xs rounded"
+							>
+								Kredi Kartı
+							</span>
+						</div>
+						<a
+							href="index7.html"
+							target="_blank"
+							class="block w-full text-center bg-indigo-600 text-white py-2 px-4 rounded text-sm"
+						>
+							Önizleme
+						</a>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Features Section -->
+		<section class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-12">
+			<div class="container mx-auto px-4">
+				<div class="text-center mb-8">
+					<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Özellikler</h2>
+					<p class="text-gray-600 dark:text-gray-400">Modern web standartlarına uygun özellikler</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<div class="text-center">
+						<div
+							class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mx-auto mb-3"
+						>
+							<svg
+								class="w-6 h-6 text-blue-600 dark:text-blue-400"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Responsive</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm">Tüm cihazlarda uyumlu</p>
+					</div>
+
+					<div class="text-center">
+						<div
+							class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mx-auto mb-3"
+						>
+							<svg
+								class="w-6 h-6 text-purple-600 dark:text-purple-400"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Dark Mode</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm">Tema desteği</p>
+					</div>
+
+					<div class="text-center">
+						<div
+							class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mx-auto mb-3"
+						>
+							<svg
+								class="w-6 h-6 text-green-600 dark:text-green-400"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Validasyon</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm">Form doğrulama</p>
+					</div>
+
+					<div class="text-center">
+						<div
+							class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mx-auto mb-3"
+						>
+							<svg
+								class="w-6 h-6 text-orange-600 dark:text-orange-400"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M13 10V3L4 14h7v7l9-11h-7z"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Hızlı</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm">Optimize performans</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6">
+			<div class="container mx-auto px-4 text-center">
+				<p class="text-gray-600 dark:text-gray-400 text-sm">© 2024 Form Templates. MIT License.</p>
+			</div>
+		</footer>
+
+		<script>
+			// Dark mode toggle
+			const themeToggle = document.getElementById('theme-toggle')
+			const html = document.documentElement
+
+			// Check for saved theme preference
+			const currentTheme = localStorage.getItem('theme') || 'light'
+			if (currentTheme === 'dark') {
+				html.classList.add('dark')
+			}
+
+			themeToggle.addEventListener('click', () => {
+				html.classList.toggle('dark')
+				const isDark = html.classList.contains('dark')
+				localStorage.setItem('theme', isDark ? 'dark' : 'light')
+			})
+		</script>
+	</body>
+</html>
